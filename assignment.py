@@ -8,26 +8,26 @@ Columns
   different objects/records
 
 How many records are in the table?
-  10000
+  10000 Correct
 How many Knights are in the table?
-  780
+  780 Correct
 Which class has the highest number of members?
-  Thief
+  Thief Correct
 What is the ID number of the Jester with the most gold?
-  3212
+  7907 Correct
 What is the total gold of the 100 wealthiest npc's in the table?
-  4917
+  4917 Correct
 What is the total gold of the 100 wealthiest npc's under level 5?
-  1967
+  1967 Correct
 What is the stats of the Bard with the highest strength?
   (id,strength,intelligence,wisdom,dexterity,constitution,charisma,class,level,hp,gold)
-  (3672, 18, 7, 13, 8, 11, 12, 'Bard', 5, 22, 23)
+  (3672, 18, 7, 13, 8, 11, 12, 'Bard', 5, 22, 23)  Correct
 What is the ID number of the npc with highest total sum of their 6 primary stats?
-  8693
+  8693 Correct
 What percentage of all fighter classes (Barbarian, Warrior, Knight, Samurai) are Warriors?
   23.72%
 What is the average hitpoints per level of the npc's that are level 10 or higher?
-  4.5
+  4.5 Correct
 
 """
 ids = []
@@ -96,10 +96,10 @@ print('A',countAssassin,'\nBarb',countBarbarian,'\nBard',countBard,'\nJ',countJe
 
 ### Jester with highest gold.
 
-qJester = "select id from npc where class='Samurai' order by gold desc"
+qJester = "select id from npc where class='Jester' order by gold desc"
 cursor.execute(qJester)
 countJ = cursor.fetchone()
-print(countJ)
+print(countJ,'jester')
 
 
 ### What is the total gold of the 100 wealthiest npc's in the table?
@@ -176,7 +176,7 @@ print('percentageBarb',percentageBarb)
 qHitpoints = "select hp, level from npc where level >= 10"
 cursor.execute(qHitpoints)
 HitpointLevel = cursor.fetchall()
-print(HitpointLevel)
+#print(HitpointLevel)
 sumHitpoints = 0
 sumLevel = 0
 
